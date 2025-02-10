@@ -3,9 +3,10 @@ import { Formik, Form, Field, FieldArray, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import api from "./axios-instence";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CustomerData from "./grid";
 
 
 
@@ -264,6 +265,8 @@ const CustomerForm = () => {
     }
   }; */
   return (
+<>
+
     <Formik
       
       initialValues={initialValues}
@@ -273,6 +276,7 @@ const CustomerForm = () => {
     >
       {({ values, resetForm }) => (
         <Form className="container p-4 border rounded-md shadow-md">
+          <div><NavLink to={'/reports'} className="btn btn-primary">Reports</NavLink></div>
           <h1 className="text-center fw-bold">Customer Information Setup</h1>
           <div className="row">
             <div className="col-8"></div>
@@ -556,6 +560,8 @@ const CustomerForm = () => {
         </Form>
       )}
     </Formik>
+  <CustomerData/>
+</>
   );
 };
 

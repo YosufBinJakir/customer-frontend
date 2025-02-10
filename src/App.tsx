@@ -8,8 +8,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import CustomerPage from "./components/customer-info";
+import Reports from "./components/Reports";
 
 
 function App() {
@@ -26,13 +27,18 @@ function App() {
 
   return (
     <>
+    
+      
+  
      <ToastContainer position="top-right" autoClose={3000} />
       <Router>
+       
         <Routes>
           <Route path="/" element={<CustomerPage/>}/>
           <Route path="/detail/:id" element={<CustomerForm/>}/>
+          <Route path="/reports" element={<Reports/>}/>
         </Routes>
-        <CustomerData/>
+       
       </Router>
       
     </>
